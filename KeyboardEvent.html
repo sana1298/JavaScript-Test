@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Event</title>
+</head>
+<body>
+    <h1>Keyboard Event</h1>
+    <div>
+        <input type="text" id="input" oninput="inputArea()"/>
+    </div>
+    <div id="display"></div>
+   <script>
+    function inputArea() {
+        let input = document.getElementById("input");
+        let display = document.getElementById("display")
+
+        let inputValue = input.value;
+        display.innerText=inputValue;
+    }
+   </script>
+</body>
+</html>

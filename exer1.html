@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Image Loading</title>
+</head>
+<body>
+    <h1>Image Loading</h1>
+    <div id="para"></div>
+    <script>
+        let para=document.getElementById("para");
+      let url="https://fakestoreapi.com/products";
+      fetch(url)
+        .then((response) =>response.json())
+        .then((data) =>{console.log(data)
+      })   .then(item =>{
+        item.map((value)=>{
+            let image=document.createElement("img");
+            image.src=value.image;
+            para.appendChild(image);
+            
+        })}).catch(error => {"error"});
+      </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Form</title>
+</head>
+<body>
+    <h1>Authentication Form</h1>
+   
+    <form id="login-form">
+        <label for="email">Email</label><br>
+        <input type="text" id="email" placeholder="Email..."> <br>
+        <label for="password" id="pass-word">Password</label><br>
+        <input type="text" id="password" placeholder="Password..."><br>
+        <button id="sub">Login</button>
+      
+    </form>
+    <div id="logout">
+        <p id="useremail"></p>
+        <p id="userpassword"></p>
+    </div>
+    
+    <script>
+let login_form=document.getElementById("login-form");
+
+let login_btn=document.getElementById("sub");
+
+let email=document.getElementById("email");
+let password=document.getElementById("password");
+
+let useremail=document.getElementById("useremail");
+let userpassword=document.getElementById("userpassword");
+
+let log_out=document.createElement("button");
+log_out.innerText="Logout";
+
+login_btn.addEventListener("click",(event)=>{
+    event.preventDefault();
+
+    let emailvalue=email.value;
+    let passwordvalue=password.value;
+
+    if(emailvalue===""){
+       alert("Email can't be empty") 
+    }
+  
+   else if(passwordvalue===""){
+        alert("Password can't be blank");
+    }    
+   
+    document.getElementById("email").value="";
+    document.getElementById("password").value="";
+
+    login_form.style.display="none";
+
+    
+    useremail.innerText=emailvalue;
+    userpassword.innerText=passwordvalue;
+
+    userpassword.appendChild(log_out)
+    });
+    let logout_form = document.getElementById("logout")
+    log_out.addEventListener("click",(event)=>{
+      logout_form.style.display="none";
+      login_form.style.display="block";
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter</title>
+</head>
+<body>
+    <h1>Click Counter</h1>
+    <div>
+        <button onclick="incrementCount()">Increment</button>
+        <p id="count"></p>
+    </div>
+    <script>
+         let count=0
+      function incrementCount() {
+        // let count=0
+        let counter = document.getElementById("count");
+         count++;
+         counter.innerText=count;
+      }
+    </script>
+</body>
+</html>

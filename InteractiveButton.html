@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button</title>
+</head>
+<body>
+    <div>
+    <h1>Interactive Button</h1>
+    <button id="btn">Click Me</button>
+    </div>
+    <script>
+        let button = document.getElementById("btn");
+        button.addEventListener("click",(event)=>{
+         event.preventDefault();
+        //  button.innerText =  "Clicked!";
+          if (button.innerHTML === 'Click Me') {
+              button.innerHTML = 'Clicked!';
+            } else {
+                button.innerHTML = 'Click Me';
+            }
+
+        })
+    </script>
+</body>
+</html>
+
+
+
